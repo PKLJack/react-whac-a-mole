@@ -84,7 +84,7 @@ const hardMoles: Mole[] = [
 ]
 
 const fetchData = (difficulty = DIFFICULTY.EASY) => {
-  console.log("fetch Data")
+  // console.log("fetch Data")
 
   if (DEBUG && difficulty === DIFFICULTY.DEBUG) {
     console.log("running in debug mode")

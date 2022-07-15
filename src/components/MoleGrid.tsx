@@ -17,7 +17,7 @@ const MoleGrid: React.FC<Props> = (props) => {
     }
   })
 
-  console.log(arr1)
+  // console.log(arr1)
 
   const elems2 = arr1.map((obj, index) => (
     <Tile

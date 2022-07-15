@@ -38,7 +38,7 @@ function App() {
   }
 
   const stopMoles = (resetPosition = false) => {
-    console.log("Stop Moles")
+    // console.log("Stop Moles")
     moles.forEach((mole) => {
       if (mole.timerId !== null) window.clearInterval(mole.timerId)
     })
@@ -52,7 +52,7 @@ function App() {
   }
 
   const startMoles = () => {
-    console.log("Start Moles")
+    // console.log("Start Moles")
 
     // Immediate occupy
     moles.forEach((mole) => occupyTile(mole.id))
@@ -62,7 +62,7 @@ function App() {
       prevMoles.map((mole) => ({
         ...mole,
         timerId: window.setInterval(() => {
-          console.log("mole tic")
+          // console.log("mole tic")
           occupyTile(mole.id)
         }, mole.interval),
       }))
@@ -93,7 +93,7 @@ function App() {
 
       const pickedPosition = chanceObj.pickone(availablePositions)
 
-      console.log(availablePositions, pickedPosition)
+      // console.log(availablePositions, pickedPosition)
 
       setTotalMoles((prevNum) => prevNum + 1)
 
@@ -118,16 +118,18 @@ function App() {
       stopMoles(true)
       setGamePhase(GAME_PHASE.ENDED)
     }
+    // eslint-disable-next-line
   }, [time])
 
   useEffect(() => {
     resetGame()
-    console.log("setting difficulty to", difficulty)
+    // console.log("setting difficulty to", difficulty)
     setMoles(fetchData(difficulty))
+    // eslint-disable-next-line
   }, [difficulty])
 
   const handleMoleClick = (e: SyntheticEvent, moleId: string) => {
-    console.log(`mole ${moleId} clicked`)
+    // console.log(`mole ${moleId} clicked`)
     setScore((prevScore) => prevScore + 1)
     setMoles((prevMoles) =>
       prevMoles.map((mole) =>
