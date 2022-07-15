@@ -16,7 +16,7 @@ const DIFFICULTY = {
   HARD: "HARD",
 }
 
-const chanceObj = new Chance(42)
+const chanceObj = new Chance()
 
 const debugMoles: Mole[] = [
   {
